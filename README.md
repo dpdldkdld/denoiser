@@ -1,60 +1,34 @@
-# denoiser
-
-딥러닝을 이용한 아날로그 음원 노이즈 제거
+denoiser (딥러닝을 이용한 음성 노이즈 제거)
 ===
-
-
-# 소개 
-
-원음을 훼손하지 않으면서 아날로그 매체(테이프, LP 등)의 잡음만을 제거하는 기능을 제공하여 고음반, 개인 녹음물 등의 디지털화에 기여하는 딥러닝 알고리즘을 만드는 프로젝트이다.
-
-
-# 개발 및 연구 내용
+     
+딥러닝을 이용하여 음성 품질에 영향을 주지 않고 음성에서 노이즈만을 제거하는 프로젝트 입니다. 
+    
+   
+## 개발 및 연구 내용
 
 ## 1. 학습 데이터 
 
-- 공테이프나 악곡들 사이의 휴지 부분(예를 들어, 1악장과 2악장 사이, 또는 1번 트랙 노래와 2번 트랙 노래 사이)에서 아날로그 노이즈를 채취하고, 이것을 최근 녹음된 깨끗한 음원들에 입혀서 학습 데이터를 생성한다는 것이 이 프로젝트의 핵심 아이디어이다.
+- Speech Data     
+  [The Mozilla Common Voice (MCV)](https://commonvoice.mozilla.org/en)
+- Noise Data 1    
+  [The UrbanSound8K dataset](https://urbansounddataset.weebly.com/urbansound8k.html)
+- Noise Data 2    
+  hiss noise 특성을 이용하여 랜덤 생성
+      
+create_dataset.py : 합성한 데이터를 tfrecords로 변환하여 학습 데이터로 사용하였습니다.     
+dataset.py : Speech Data와 Noise Data 1을 합성하는 함수를 포함합니다.      
+dataset_modified.py : Speech Data와 Noise Data 2를 합성하는 함수를 포함합니다.      
 
-- C (Clean source): 잡음이 없는 깨끗한 음원. 인공지능 신경망에서 노이즈 제거 후에 출력할 목표 데이터로 학습.
+## 2. 모델 구현
 
-- N (Noise): 아날로그 노이즈
+CR-CED(with skip connection)
+- Layer Configuration : (Conv, ReLU, BN) X 15, Conv
+- Number of Filters : (18-30-8) X 5, 1
+- Filter Width : (9-5-9) X 5, 129
+- (img)
 
-- P (Polluted source): C + N. 노이즈에 오염된 음원. 인공지능 신경망에서 노이즈 제거 전의 입력 데이터로 학습.
+## 3. 참고  
 
-
-## 2. 알고리즘의 도식
-
-[그림1. 전체 알고리즘]
-
-![image](https://user-images.githubusercontent.com/97973845/150456920-54b0346d-851a-4558-a581-8415325fd1c6.png)
-
-## 3. 모델 구현
-
-- 프로젝트 데이터 파이프라인
-
-[그림2. 학습 단계]
-
-![image](https://user-images.githubusercontent.com/97973845/150456959-1159f86a-f60f-45f0-8f7a-252c969bc525.png)
-
-[그림3. 사용 단계]
-
-![image](https://user-images.githubusercontent.com/97973845/150456979-cc31a41b-2978-428b-8169-b44173d6d9f1.png)
-
-## 4. 참고 모델 
-
-잡음제거 오토 인코더 (Denoising Autoencoder) : 입력에 포함된 잡음을 제거하는 역할을 한다. 
-
-- [Tensorflow Autoencoder 소개](https://www.tensorflow.org/tutorials/generative/autoencoder?hl=ko)
-
-[그림4. 잡음제거 오토인코더]
-
-![image](https://user-images.githubusercontent.com/97973845/150471884-164a1bae-a392-4873-8fae-827321408971.png)
-
-- 데이터의 종류, 생성 개념 등의 차이점이 있지만 본 프로젝트의 모델은 전체적으로 잡음 제거 오토 인코더와 유사하여 기존 모델을 베이스 라인 모델로 참고한다.
-- 기존 잡음 제거 오토 인코더는 이미지 데이터 처리를 위해 구현된 것이고, 본 프로젝트는 오디오 데이터를 다룬다는 점에서 차이가 있으며, 오디오 데이터를 처리하는 부분이 구현되어야 한다.
-- 위 잡음 제거 오토 인코더의 도식에서는 은닉층의 사이즈를 줄여 입력 데이터의 특징도 추출하도록 돼 있는데, 본 프로젝트는 하이파이를 추구하는 오디오 데이터를 처리하는 것이므로 가능한 원본 음향 보존해야 하고 입력 데이터의 차원을 축소하는 처리를 하는 것은 잘못된 방향이다.
-- 오토 인코더로 구현된 기본 모델에 판별자를 추가 구현하여 GAN으로 진화시켜 성능을 향상시킬 수 있는지 살펴보는 것도 고려한다.
-- 또한, 인코더, 디코더 부분을 Convolutional layer, Recurrent layer 등으로 구현하여 성능을 높일 수 있는지 살펴보는 것도 고려한다.
-- 오토인코더나 GAN과 같은 생성 모델은 말 그대로 소실된 데이터를 생성하는 개념이라고 한다면, 잡음이 추가된 오디오는 원음이 소실된 것이 아니라 원음 오디오 데이터가 보존된 상태에서 잡음 데이터가 추가된 형태이므로 기존의 생성 모델을 그대로 적용하는 것이 아니라 판별자 등을 구성할 때 프로젝트의 작업에 맞게 적절한 수정 설계가 필요하다.
-
+모델은 [A Fully Convolutional Neural Network for Speech Enhancement](https://www.semanticscholar.org/paper/A-Fully-Convolutional-Neural-Network-for-Speech-Park-Lee/9ed8e2f6c338f4e0d1ab0d8e6ab8b836ea66ae95?p2df) 논문을 참고하였습니다.     
+또한, [cnn-audio-denoiser](https://github.com/daitan-innovation/cnn-audio-denoiser) 깃헙을 이용하여 진행하였습니다. 
 
