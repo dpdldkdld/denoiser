@@ -1,0 +1,26 @@
+{
+    "os": "Linux-5.4.0-1065-gcp-x86_64-with-debian-buster-sid",
+    "python": "3.7.11",
+    "heartbeatAt": "2022-03-04T06:49:48.374705",
+    "startedAt": "2022-03-04T06:49:46.117911",
+    "docker": null,
+    "gpu": "Tesla V100-SXM2-16GB",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "-f",
+        "/home/seungmiya13/.local/share/jupyter/runtime/kernel-217e99b3-cfb5-435a-959d-f9c0dc3bd573.json"
+    ],
+    "state": "running",
+    "program": "cnn-audio-denoiser/SpeechDenoiserCNN-Copy2.ipynb",
+    "root": "/home/seungmiya13/cnn-audio-denoiser",
+    "git": {
+        "remote": "https://github.com/daitan-innovation/cnn-audio-denoiser.git",
+        "commit": "6cd9a65facdfc1de015be7513fa394a5a6dd1589"
+    },
+    "email": null,
+    "host": "aiing2",
+    "username": "seungmiya13",
+    "executable": "/home/seungmiya13/anaconda3/envs/aiing2/bin/python"
+}

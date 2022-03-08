@@ -1,7 +1,7 @@
 import librosa
 import numpy as np
 import math
-from data_processing.feature_extractor import FeatureExtractor
+from feature_extractor import FeatureExtractor
 from utils import prepare_input_features
 import multiprocessing
 import os
@@ -124,13 +124,13 @@ class Dataset:
 
         return noise_magnitude, clean_magnitude, noise_phase
 
-    def create_tf_record(self, *, prefix, subset_size, parallel=True):
+    def create_tf_record(self, *, prefix, subset_size, parallel=False):
         counter = 0
         p = multiprocessing.Pool(multiprocessing.cpu_count())
 
         for i in range(0, len(self.clean_filenames), subset_size):
 
-            tfrecord_filename = './records/' + prefix + '_' + str(counter) + '.tfrecords'
+            tfrecord_filename = os.getenv('HOME')+'/data/tfrecords/' + prefix + '_' + str(counter) + '.tfrecords'
 
             if os.path.isfile(tfrecord_filename):
                 print(f"Skipping {tfrecord_filename}")

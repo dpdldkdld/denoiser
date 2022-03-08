@@ -1,0 +1,368 @@
+Model: "model_1"
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to
+==================================================================================================
+input_2 (InputLayer)            [(None, 129, 8, 1)]  0
+__________________________________________________________________________________________________
+zero_padding2d_1 (ZeroPadding2D (None, 137, 8, 1)    0           input_2[0][0]
+__________________________________________________________________________________________________
+conv2d_16 (Conv2D)              (None, 129, 1, 18)   1296        zero_padding2d_1[0][0]
+__________________________________________________________________________________________________
+activation_15 (Activation)      (None, 129, 1, 18)   0           conv2d_16[0][0]
+__________________________________________________________________________________________________
+batch_normalization_15 (BatchNo (None, 129, 1, 18)   72          activation_15[0][0]
+__________________________________________________________________________________________________
+conv2d_17 (Conv2D)              (None, 129, 1, 30)   2700        batch_normalization_15[0][0]
+__________________________________________________________________________________________________
+activation_16 (Activation)      (None, 129, 1, 30)   0           conv2d_17[0][0]
+__________________________________________________________________________________________________
+batch_normalization_16 (BatchNo (None, 129, 1, 30)   120         activation_16[0][0]
+__________________________________________________________________________________________________
+conv2d_18 (Conv2D)              (None, 129, 1, 8)    2160        batch_normalization_16[0][0]
+__________________________________________________________________________________________________
+activation_17 (Activation)      (None, 129, 1, 8)    0           conv2d_18[0][0]
+__________________________________________________________________________________________________
+batch_normalization_17 (BatchNo (None, 129, 1, 8)    32          activation_17[0][0]
+__________________________________________________________________________________________________
+conv2d_19 (Conv2D)              (None, 129, 1, 18)   1296        batch_normalization_17[0][0]
+__________________________________________________________________________________________________
+activation_18 (Activation)      (None, 129, 1, 18)   0           conv2d_19[0][0]
+__________________________________________________________________________________________________
+batch_normalization_18 (BatchNo (None, 129, 1, 18)   72          activation_18[0][0]
+__________________________________________________________________________________________________
+conv2d_20 (Conv2D)              (None, 129, 1, 30)   2700        batch_normalization_18[0][0]
+__________________________________________________________________________________________________
+activation_19 (Activation)      (None, 129, 1, 30)   0           conv2d_20[0][0]
+__________________________________________________________________________________________________
+batch_normalization_19 (BatchNo (None, 129, 1, 30)   120         activation_19[0][0]
+__________________________________________________________________________________________________
+conv2d_21 (Conv2D)              (None, 129, 1, 8)    2160        batch_normalization_19[0][0]
+__________________________________________________________________________________________________
+activation_20 (Activation)      (None, 129, 1, 8)    0           conv2d_21[0][0]
+__________________________________________________________________________________________________
+batch_normalization_20 (BatchNo (None, 129, 1, 8)    32          activation_20[0][0]
+__________________________________________________________________________________________________
+conv2d_22 (Conv2D)              (None, 129, 1, 18)   1296        batch_normalization_20[0][0]
+__________________________________________________________________________________________________
+activation_21 (Activation)      (None, 129, 1, 18)   0           conv2d_22[0][0]
+__________________________________________________________________________________________________
+batch_normalization_21 (BatchNo (None, 129, 1, 18)   72          activation_21[0][0]
+__________________________________________________________________________________________________
+conv2d_23 (Conv2D)              (None, 129, 1, 30)   2700        batch_normalization_21[0][0]
+__________________________________________________________________________________________________
+activation_22 (Activation)      (None, 129, 1, 30)   0           conv2d_23[0][0]
+__________________________________________________________________________________________________
+batch_normalization_22 (BatchNo (None, 129, 1, 30)   120         activation_22[0][0]
+__________________________________________________________________________________________________
+conv2d_24 (Conv2D)              (None, 129, 1, 8)    2160        batch_normalization_22[0][0]
+__________________________________________________________________________________________________
+activation_23 (Activation)      (None, 129, 1, 8)    0           conv2d_24[0][0]
+__________________________________________________________________________________________________
+batch_normalization_23 (BatchNo (None, 129, 1, 8)    32          activation_23[0][0]
+__________________________________________________________________________________________________
+conv2d_25 (Conv2D)              (None, 129, 1, 18)   1296        batch_normalization_23[0][0]
+__________________________________________________________________________________________________
+activation_24 (Activation)      (None, 129, 1, 18)   0           conv2d_25[0][0]
+__________________________________________________________________________________________________
+batch_normalization_24 (BatchNo (None, 129, 1, 18)   72          activation_24[0][0]
+__________________________________________________________________________________________________
+conv2d_26 (Conv2D)              (None, 129, 1, 30)   2700        batch_normalization_24[0][0]
+__________________________________________________________________________________________________
+tf.__operators__.add_2 (TFOpLam (None, 129, 1, 30)   0           conv2d_26[0][0]
+                                                                 conv2d_20[0][0]
+__________________________________________________________________________________________________
+activation_25 (Activation)      (None, 129, 1, 30)   0           tf.__operators__.add_2[0][0]
+__________________________________________________________________________________________________
+batch_normalization_25 (BatchNo (None, 129, 1, 30)   120         activation_25[0][0]
+__________________________________________________________________________________________________
+conv2d_27 (Conv2D)              (None, 129, 1, 8)    2160        batch_normalization_25[0][0]
+__________________________________________________________________________________________________
+activation_26 (Activation)      (None, 129, 1, 8)    0           conv2d_27[0][0]
+__________________________________________________________________________________________________
+batch_normalization_26 (BatchNo (None, 129, 1, 8)    32          activation_26[0][0]
+__________________________________________________________________________________________________
+conv2d_28 (Conv2D)              (None, 129, 1, 18)   1296        batch_normalization_26[0][0]
+__________________________________________________________________________________________________
+activation_27 (Activation)      (None, 129, 1, 18)   0           conv2d_28[0][0]
+__________________________________________________________________________________________________
+batch_normalization_27 (BatchNo (None, 129, 1, 18)   72          activation_27[0][0]
+__________________________________________________________________________________________________
+conv2d_29 (Conv2D)              (None, 129, 1, 30)   2700        batch_normalization_27[0][0]
+__________________________________________________________________________________________________
+tf.__operators__.add_3 (TFOpLam (None, 129, 1, 30)   0           conv2d_29[0][0]
+                                                                 conv2d_17[0][0]
+__________________________________________________________________________________________________
+activation_28 (Activation)      (None, 129, 1, 30)   0           tf.__operators__.add_3[0][0]
+__________________________________________________________________________________________________
+batch_normalization_28 (BatchNo (None, 129, 1, 30)   120         activation_28[0][0]
+__________________________________________________________________________________________________
+conv2d_30 (Conv2D)              (None, 129, 1, 8)    2160        batch_normalization_28[0][0]
+__________________________________________________________________________________________________
+activation_29 (Activation)      (None, 129, 1, 8)    0           conv2d_30[0][0]
+__________________________________________________________________________________________________
+batch_normalization_29 (BatchNo (None, 129, 1, 8)    32          activation_29[0][0]
+__________________________________________________________________________________________________
+spatial_dropout2d_1 (SpatialDro (None, 129, 1, 8)    0           batch_normalization_29[0][0]
+__________________________________________________________________________________________________
+conv2d_31 (Conv2D)              (None, 129, 1, 1)    1033        spatial_dropout2d_1[0][0]
+==================================================================================================
+Total params: 32,933
+Trainable params: 32,373
+Non-trainable params: 560
+__________________________________________________________________________________________________
+2022-03-03 12:11:58.467698: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:116] None of the MLIR optimization passes are enabled (registered 2)
+2022-03-03 12:11:58.468340: I tensorflow/core/platform/profile_utils/cpu_utils.cc:112] CPU Frequency: 2299995000 Hz
+     14/Unknown - 2s 39ms/step - loss: 0.7536 - rmse: 0.8669
+2022-03-03 12:11:58.872856: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcudnn.so.7
+2022-03-03 12:12:00.032044: W tensorflow/stream_executor/gpu/asm_compiler.cc:98] *** WARNING *** You are using ptxas 9.1.108, which is older than 9.2.88. ptxas 9.x before 9.2.88 is known to miscompile XLA code, leading to incorrect results or invalid-address errors.
+You do not need to update to CUDA 9.2.88; cherry-picking the ptxas binary is sufficient.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2210/2210 [==============================] - 89s 40ms/step - loss: 0.7218 - rmse: 0.8496
+Baseline accuracy 0.7204369306564331
+2022-03-03 12:13:45.539322: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2022-03-03 12:13:45.539376: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2022-03-03 12:13:45.539428: I tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1365] Profiler found 1 GPUs
+2022-03-03 12:13:45.543077: I tensorflow/stream_executor/platform/default/dso_loader.cc:49] Successfully opened dynamic library libcupti.so.10.1
+2022-03-03 12:13:45.643613: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI_ERROR_INSUFFICIENT_PRIVILEGES
+2022-03-03 12:13:45.644186: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+Epoch 1/400
+ 31/600 [>.............................] - ETA: 20s - loss: 1.0720 - rmse: 1.0354
+2022-03-03 12:13:47.894919: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2022-03-03 12:13:47.894961: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2022-03-03 12:13:47.895704: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI_ERROR_INSUFFICIENT_PRIVILEGES
+2022-03-03 12:13:47.913093: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2022-03-03 12:13:47.922433: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2022-03-03 12:13:47.927212: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2022-03-03 12:13:47.937812: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47
+2022-03-03 12:13:47.944111: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.trace.json.gz
+2022-03-03 12:13:47.964939: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47
+2022-03-03 12:13:47.968258: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.memory_profile.json.gz
+2022-03-03 12:13:47.968510: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47Dumped tool data for xplane.pb to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.xplane.pb
+Dumped tool data for overview_page.pb to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.overview_page.pb
+Dumped tool data for input_pipeline.pb to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to logs/20220303-121345/train/plugins/profile/2022_03_03_12_13_47/aiing2.tensorflow_stats.pb
+
+
+
+
+
+
+
+
+
+600/600 [==============================] - 89s 145ms/step - loss: 0.3481 - rmse: 0.5900 - val_loss: 0.2445 - val_rmse: 0.4945
+Epoch 2/400
+
+
+
+
+
+
+
+
+
+
+600/600 [==============================] - 86s 143ms/step - loss: 0.2212 - rmse: 0.4703 - val_loss: 0.2078 - val_rmse: 0.4558
+Epoch 3/400
+
+
+
+
+
+
+
+
+
+600/600 [==============================] - 89s 149ms/step - loss: 0.2024 - rmse: 0.4499 - val_loss: 0.1975 - val_rmse: 0.4445
+Epoch 4/400
+
+
+
+
+
+
+
+
+
+600/600 [==============================] - 82s 138ms/step - loss: 0.1961 - rmse: 0.4429 - val_loss: 0.1895 - val_rmse: 0.4353
+Epoch 5/400
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2210/2210 [==============================] - 69s 31ms/step - loss: 0.1918 - rmse: 0.4380
+Baseline accuracy 0.1918228566646576
+2022-03-03 13:28:54.221429: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2022-03-03 13:28:54.221495: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2022-03-03 13:28:54.221684: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI_ERROR_NOT_INITIALIZED
+2022-03-03 13:28:54.221730: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+Epoch 1/400
+2022-03-03 13:31:46.124692: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2022-03-03 13:31:46.124741: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2022-03-03 13:31:46.124868: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI_ERROR_NOT_INITIALIZED
+2022-03-03 13:31:46.124889: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+  5/600 [..............................] - ETA: 29s - loss: 0.2033 - rmse: 0.4509WARNING:tensorflow:Callback method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0210s vs `on_train_batch_end` time: 0.0212s). Check your callbacks.
+ 43/600 [=>............................] - ETA: 17s - loss: 0.2001 - rmse: 0.4473
+2022-03-03 13:31:46.839243: I tensorflow/core/profiler/lib/profiler_session.cc:136] Profiler session initializing.
+2022-03-03 13:31:46.839278: I tensorflow/core/profiler/lib/profiler_session.cc:155] Profiler session started.
+2022-03-03 13:31:46.839341: E tensorflow/core/profiler/internal/gpu/cupti_tracer.cc:1415] function cupti_interface_->Subscribe( &subscriber_, (CUpti_CallbackFunc)ApiCallback, this)failed with error CUPTI_ERROR_NOT_INITIALIZED
+2022-03-03 13:31:46.855734: I tensorflow/core/profiler/lib/profiler_session.cc:71] Profiler session collecting data.
+2022-03-03 13:31:46.864018: I tensorflow/core/profiler/internal/gpu/cupti_collector.cc:228]  GpuTracer has collected 0 callback api events and 0 activity events.
+2022-03-03 13:31:46.867762: I tensorflow/core/profiler/lib/profiler_session.cc:172] Profiler session tear down.
+2022-03-03 13:31:46.876852: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46
+2022-03-03 13:31:46.883900: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for trace.json.gz to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.trace.json.gz
+2022-03-03 13:31:46.904376: I tensorflow/core/profiler/rpc/client/save_profile.cc:137] Creating directory: logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46
+2022-03-03 13:31:46.907789: I tensorflow/core/profiler/rpc/client/save_profile.cc:143] Dumped gzipped tool data for memory_profile.json.gz to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.memory_profile.json.gz
+2022-03-03 13:31:46.908044: I tensorflow/core/profiler/rpc/client/capture_profile.cc:251] Creating directory: logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46Dumped tool data for xplane.pb to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.xplane.pb
+Dumped tool data for overview_page.pb to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.overview_page.pb
+Dumped tool data for input_pipeline.pb to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.input_pipeline.pb
+Dumped tool data for tensorflow_stats.pb to logs/20220303-133146/train/plugins/profile/2022_03_03_13_31_46/aiing2.tensorflow_stats.pb
+
+
+
+
+
+
+
+
+600/600 [==============================] - 102s 168ms/step - loss: 0.1875 - rmse: 0.4330 - val_loss: 0.1893 - val_rmse: 0.4350
+Epoch 2/400
+
+
+
+
+
+
+
+
+
+600/600 [==============================] - 83s 138ms/step - loss: 0.1804 - rmse: 0.4248 - val_loss: 0.1847 - val_rmse: 0.4298
+Epoch 3/400
+
+
+
+
+
+
+
+
+600/600 [==============================] - 92s 154ms/step - loss: 0.1781 - rmse: 0.4220 - val_loss: 0.1861 - val_rmse: 0.4313
+Epoch 4/400
+
+
+
+
+
+
+
+
+600/600 [==============================] - 92s 153ms/step - loss: 0.1791 - rmse: 0.4232 - val_loss: 0.1816 - val_rmse: 0.4262
+Epoch 5/400
+Exception in thread ChkStopThr:
+Traceback (most recent call last):
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/wandb_run.py", line 167, in check_status
+    status_response = self._interface.communicate_stop_status()
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface.py", line 114, in communicate_stop_status
+    resp = self._communicate_stop_status(status)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 387, in _communicate_stop_status
+    resp = self._communicate(req, local=True)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 222, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 227, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
+Exception in thread NetStatThr:
+Traceback (most recent call last):
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/threading.py", line 926, in _bootstrap_inner
+    self.run()
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/wandb_run.py", line 149, in check_network_status
+    status_response = self._interface.communicate_network_status()
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface.py", line 125, in communicate_network_status
+    resp = self._communicate_network_status(status)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 397, in _communicate_network_status
+    resp = self._communicate(req, local=True)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 222, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/seungmiya13/anaconda3/envs/aiing2/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 227, in _communicate_async
+    raise Exception("The wandb backend process has shutdown")
+Exception: The wandb backend process has shutdown
