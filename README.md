@@ -31,6 +31,8 @@ CR-CED(with skip connection)
 
 ![R-CED](https://user-images.githubusercontent.com/97973845/157151778-902e1ad4-85f9-4310-92a9-11397f5e3510.PNG)
 
+```SpeechDenoiserCNN.ipynb``` ~ ```SpeechDenoiserCNN_copy4.ipynb``` : 다양한 데이터 버전으로 돌려본 모델을 확인할 수 있습니다. 
+
 ## 3. Reference   
 
 모델은 [A Fully Convolutional Neural Network for Speech Enhancement](https://www.semanticscholar.org/paper/A-Fully-Convolutional-Neural-Network-for-Speech-Park-Lee/9ed8e2f6c338f4e0d1ab0d8e6ab8b836ea66ae95?p2df) 논문을 참고하였습니다.     
