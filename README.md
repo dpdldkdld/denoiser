@@ -31,7 +31,7 @@ CR-CED(with skip connection)
 
 ![R-CED](https://user-images.githubusercontent.com/97973845/157151778-902e1ad4-85f9-4310-92a9-11397f5e3510.PNG)
 
-```SpeechDenoiserCNN.ipynb``` ~ ```SpeechDenoiserCNN_copy4.ipynb``` : 다양한 데이터 버전으로 돌려본 모델을 확인할 수 있습니다. 
+```SpeechDenoiserCNN.ipynb``` ~ ```SpeechDenoiserCNN-opy4.ipynb``` : 다양한 데이터 버전으로 돌려본 모델을 확인할 수 있습니다. 
 
 ## 3. Reference   
 
